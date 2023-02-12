@@ -5,7 +5,7 @@
         [activated]="selectedMenuOpt === m.name"
         (click)="setMenu(m.name)"
       >
-        <a matListItemTitle href="#">{{ m.description }}</a>
+        <a matListItemTitle [routerLink]="m.link">{{ m.description }}</a>
         <mat-icon matListItemIcon>{{ m.icon }}</mat-icon>
       </mat-list-item>
       <mat-divider *ngIf="m.name === 'guest'"></mat-divider>
@@ -22,7 +22,7 @@
       [activated]="selectedSubMenuOpt === sm.name"
       (click)="setSubMenu(sm.name)"
     >
-      <a matListItemTitle href="#">{{ sm.description }}</a>
+      <a matListItemTitle [routerLink]="sm.link">{{ sm.description }}</a>
       <mat-icon matListItemIcon>{{ sm.icon }}</mat-icon>
     </mat-list-item>
   </mat-nav-list>

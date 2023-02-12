@@ -11,9 +11,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { GuestComponent } from './components/guest/guest.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
+import { PricesComponent } from './components/prices/prices.component';
 
 @NgModule({
-  declarations: [AppComponent, NavListComponent],
+  declarations: [AppComponent, NavListComponent, DashboardComponent, RegistrationComponent, GuestComponent, RoomsComponent, PricesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

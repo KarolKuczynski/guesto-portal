@@ -8,14 +8,34 @@ import { Menu } from './model/menu.model';
 })
 export class NavListComponent {
   menu: Menu[] = [
-    { name: 'home', description: 'Home', icon: 'home' },
-    { name: 'reg', description: 'Registration', icon: 'app_registration' },
-    { name: 'guest', description: 'Guest', icon: 'person' },
-    { name: 'settings', description: 'Settings', icon: 'settings' },
+    { name: 'home', description: 'Home', icon: 'home', link: '' },
+    {
+      name: 'reg',
+      description: 'Registration',
+      icon: 'app_registration',
+      link: 'registration',
+    },
+    { name: 'guest', description: 'Guest', icon: 'person', link: 'guest' },
+    {
+      name: 'settings',
+      description: 'Settings',
+      icon: 'settings',
+      link: 'rooms',
+    },
   ];
   subMenu: Menu[] = [
-    { name: 'rooms', description: 'Rooms', icon: 'meeting_room' },
-    { name: 'prices', description: 'Prices', icon: 'price_change' },
+    {
+      name: 'rooms',
+      description: 'Rooms',
+      icon: 'meeting_room',
+      link: 'rooms',
+    },
+    {
+      name: 'prices',
+      description: 'Prices',
+      icon: 'price_change',
+      link: 'prices',
+    },
   ];
 
   selectedMenuOpt: string = 'home';
@@ -23,6 +43,8 @@ export class NavListComponent {
 
   setMenu(opt: string) {
     this.selectedMenuOpt = opt;
+
+    if (opt === 'settings') this.selectedSubMenuOpt = 'rooms';
   }
 
   setSubMenu(opt: string) {
