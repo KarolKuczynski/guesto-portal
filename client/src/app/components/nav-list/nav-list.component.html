@@ -1,0 +1,29 @@
+<div class="nav-menu">
+  <mat-nav-list role="navigation">
+    <div *ngFor="let m of menu">
+      <mat-list-item
+        [activated]="selectedMenuOpt === m.name"
+        (click)="setMenu(m.name)"
+      >
+        <a matListItemTitle href="#">{{ m.description }}</a>
+        <mat-icon matListItemIcon>{{ m.icon }}</mat-icon>
+      </mat-list-item>
+      <mat-divider *ngIf="m.name === 'guest'"></mat-divider>
+    </div>
+  </mat-nav-list>
+  <mat-nav-list
+    role="navigation"
+    class="sub-nav"
+    *ngIf="selectedMenuOpt === 'settings'"
+  >
+    <mat-list-item
+      class="sub-nav-element"
+      *ngFor="let sm of subMenu"
+      [activated]="selectedSubMenuOpt === sm.name"
+      (click)="setSubMenu(sm.name)"
+    >
+      <a matListItemTitle href="#">{{ sm.description }}</a>
+      <mat-icon matListItemIcon>{{ sm.icon }}</mat-icon>
+    </mat-list-item>
+  </mat-nav-list>
+</div>
