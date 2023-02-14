@@ -14,11 +14,17 @@ import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { GuestComponent } from './components/guest/guest.component';
-import { RoomsComponent } from './components/rooms/rooms.component';
 import { PricesComponent } from './components/prices/prices.component';
 
 @NgModule({
-  declarations: [AppComponent, NavListComponent, DashboardComponent, RegistrationComponent, GuestComponent, RoomsComponent, PricesComponent],
+  declarations: [
+    AppComponent,
+    NavListComponent,
+    DashboardComponent,
+    RegistrationComponent,
+    GuestComponent,
+    PricesComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

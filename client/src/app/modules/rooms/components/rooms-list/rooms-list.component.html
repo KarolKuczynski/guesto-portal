@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Badge</th>
+      <th>Adults</th>
+      <th>Children</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of rooms">
+      <td>{{ r.id }}</td>
+      <td>{{ r.name }}</td>
+      <td>{{ r.badge }}</td>
+      <td>{{ r.adults }}</td>
+      <td>{{ r.children }}</td>
+    </tr>
+  </tbody>
+</table>
