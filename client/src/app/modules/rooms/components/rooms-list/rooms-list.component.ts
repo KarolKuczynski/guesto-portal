@@ -8,4 +8,6 @@ import { Room } from '../../models/room.model';
 })
 export class RoomsListComponent {
   @Input() rooms: Room[] = [];
+
+  columns: string[] = ['id', 'name', 'roomNo', 'adults', 'children'];
 }

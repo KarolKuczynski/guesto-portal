@@ -1,20 +1,29 @@
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Badge</th>
-      <th>Adults</th>
-      <th>Children</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let r of rooms">
-      <td>{{ r.id }}</td>
-      <td>{{ r.name }}</td>
-      <td>{{ r.badge }}</td>
-      <td>{{ r.adults }}</td>
-      <td>{{ r.children }}</td>
-    </tr>
-  </tbody>
+<table mat-table [dataSource]="rooms">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="roomNo">
+    <th mat-header-cell *matHeaderCellDef>Room No.</th>
+    <td mat-cell *matCellDef="let element">{{ element.roomNo }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="adults">
+    <th mat-header-cell *matHeaderCellDef>Adults</th>
+    <td mat-cell *matCellDef="let element">{{ element.adults }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="children">
+    <th mat-header-cell *matHeaderCellDef>Children</th>
+    <td mat-cell *matCellDef="let element">{{ element.children }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
 </table>

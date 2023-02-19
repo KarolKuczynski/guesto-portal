@@ -6,9 +6,19 @@ import { RoomsListComponent } from './components/rooms-list/rooms-list.component
 import { RoomsFormComponent } from './components/rooms-form/rooms-form.component';
 
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [RoomsComponent, RoomsListComponent, RoomsFormComponent],
-  imports: [CommonModule, RoomsRoutingModule, MatInputModule],
+  imports: [
+    CommonModule,
+    RoomsRoutingModule,
+    MatInputModule,
+    MatTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+  ],
 })
 export class RoomsModule {}
