@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GuestComponent } from './components/guest/guest.component';
-import { PricesComponent } from './components/prices/prices.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 
 const routes: Routes = [
@@ -15,7 +14,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/rooms/rooms.module').then((m) => m.RoomsModule),
   },
-  { path: 'prices', component: PricesComponent },
+  {
+    path: 'prices',
+    loadChildren: () =>
+      import('./modules/prices/prices.module').then((m) => m.PricesModule),
+  },
 ];
 
 @NgModule({

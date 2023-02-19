@@ -14,7 +14,6 @@ import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { GuestComponent } from './components/guest/guest.component';
-import { PricesComponent } from './components/prices/prices.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { PricesComponent } from './components/prices/prices.component';
     DashboardComponent,
     RegistrationComponent,
     GuestComponent,
-    PricesComponent,
   ],
   imports: [
     BrowserModule,
