@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Menu } from './model/menu.model';
 
 @Component({
-  selector: 'app-nav-list',
-  templateUrl: './nav-list.component.html',
-  styleUrls: ['./nav-list.component.scss'],
+    selector: 'app-nav-list',
+    templateUrl: './nav-list.component.html',
+    styleUrls: ['./nav-list.component.scss'],
+    standalone: false
 })
 export class NavListComponent {
   menu: Menu[] = [

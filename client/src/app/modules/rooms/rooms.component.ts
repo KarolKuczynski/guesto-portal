@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Room } from './models/room.model';
 
 @Component({
-  selector: 'app-rooms',
-  templateUrl: './rooms.component.html',
-  styleUrls: ['./rooms.component.scss'],
+    selector: 'app-rooms',
+    templateUrl: './rooms.component.html',
+    styleUrls: ['./rooms.component.scss'],
+    standalone: false
 })
 export class RoomsComponent {
   rooms: Room[] = [

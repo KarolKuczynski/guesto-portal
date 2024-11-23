@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-rooms-form',
-  templateUrl: './rooms-form.component.html',
-  styleUrls: ['./rooms-form.component.scss']
+    selector: 'app-rooms-form',
+    templateUrl: './rooms-form.component.html',
+    styleUrls: ['./rooms-form.component.scss'],
+    standalone: false
 })
 export class RoomsFormComponent {
 
