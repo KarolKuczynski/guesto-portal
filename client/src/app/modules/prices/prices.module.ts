@@ -4,7 +4,6 @@ import { PricesComponent } from './prices.component';
 import { PricesRoutingModule } from './prices-routing.module';
 
 @NgModule({
-  declarations: [PricesComponent],
-  imports: [CommonModule, PricesRoutingModule],
+    imports: [CommonModule, PricesRoutingModule, PricesComponent],
 })
 export class PricesModule {}

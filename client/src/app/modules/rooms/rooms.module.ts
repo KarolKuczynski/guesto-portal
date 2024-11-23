@@ -6,7 +6,6 @@ import { RoomsListComponent } from './components/rooms-list/rooms-list.component
 import { RoomsFormComponent } from './components/rooms-form/rooms-form.component';
 
 @NgModule({
-  declarations: [RoomsComponent, RoomsListComponent, RoomsFormComponent],
-  imports: [CommonModule, RoomsRoutingModule],
+    imports: [CommonModule, RoomsRoutingModule, RoomsComponent, RoomsListComponent, RoomsFormComponent],
 })
 export class RoomsModule {}

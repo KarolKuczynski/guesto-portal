@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Room } from './models/room.model';
+import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
+import { RoomsFormComponent } from './components/rooms-form/rooms-form.component';
 
 @Component({
     selector: 'app-rooms',
     templateUrl: './rooms.component.html',
     styleUrls: ['./rooms.component.scss'],
-    standalone: false
+    imports: [RoomsListComponent, RoomsFormComponent]
 })
 export class RoomsComponent {
   rooms: Room[] = [
