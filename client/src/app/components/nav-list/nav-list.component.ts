@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Menu } from './model/menu.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-nav-list',
-    templateUrl: './nav-list.component.html',
-    styleUrls: ['./nav-list.component.scss']
+  selector: 'app-nav-list',
+  templateUrl: './nav-list.component.html',
+  styleUrls: ['./nav-list.component.scss'],
+  imports: [RouterLink],
 })
 export class NavListComponent {
   menu: Menu[] = [

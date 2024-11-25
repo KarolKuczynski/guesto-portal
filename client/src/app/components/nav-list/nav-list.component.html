@@ -1,4 +1,20 @@
 <div class="nav-menu">
+  <ul>
+    @for(m of menu; track m){
+    <li>
+      <a [routerLink]="m.link">{{ m.description }}</a>
+      <span class="material-symbols-outlined">{{ m.icon }}</span>
+    </li>
+    }
+  </ul>
+  <ul class="sub-nav">
+    @for(sm of subMenu; track sm) {
+    <li class="sub-nav-element">
+      <a [routerLink]="sm.link">{{ sm.description }}</a>
+      <span class="material-symbols-outlined">{{ sm.icon }}</span>
+    </li>
+    }
+  </ul>
   <!--<mat-nav-list role="navigation">
     <div *ngFor="let m of menu">
       <mat-list-item
