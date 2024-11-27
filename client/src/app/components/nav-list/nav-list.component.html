@@ -1,45 +1,30 @@
 <div class="nav-menu">
   <ul>
     @for(m of menu; track m){
-    <li>
-      <a [routerLink]="m.link">{{ m.description }}</a>
-      <span class="material-symbols-outlined">{{ m.icon }}</span>
-    </li>
-    }
-  </ul>
-  <ul class="sub-nav">
-    @for(sm of subMenu; track sm) {
-    <li class="sub-nav-element">
-      <a [routerLink]="sm.link">{{ sm.description }}</a>
-      <span class="material-symbols-outlined">{{ sm.icon }}</span>
-    </li>
-    }
-  </ul>
-  <!--<mat-nav-list role="navigation">
-    <div *ngFor="let m of menu">
-      <mat-list-item
-        [activated]="selectedMenuOpt === m.name"
-        (click)="setMenu(m.name)"
-      >
-        <a matListItemTitle [routerLink]="m.link">{{ m.description }}</a>
-        <mat-icon matListItemIcon>{{ m.icon }}</mat-icon>
-      </mat-list-item>
-      <mat-divider *ngIf="m.name === 'guest'"></mat-divider>
-    </div>
-  </mat-nav-list>
-  <mat-nav-list
-    role="navigation"
-    class="sub-nav"
-    *ngIf="selectedMenuOpt === 'settings'"
-  >
-    <mat-list-item
-      class="sub-nav-element"
-      *ngFor="let sm of subMenu"
-      [activated]="selectedSubMenuOpt === sm.name"
-      (click)="setSubMenu(sm.name)"
+    <li
+      class="flex items-center gap-2 p-4 m-2 rounded-lg cursor-pointer"
+      [ngClass]="selectedMenuOpt === m.name ? 'bg-blue-500' : 'bg-blue-300'"
+      (click)="setMenu(m.name)"
+      [routerLink]="m.link"
     >
-      <a matListItemTitle [routerLink]="sm.link">{{ sm.description }}</a>
-      <mat-icon matListItemIcon>{{ sm.icon }}</mat-icon>
-    </mat-list-item>
-  </mat-nav-list>-->
+      <span class="material-symbols-outlined">{{ m.icon }}</span>
+      {{ m.description }}
+    </li>
+    }
+  </ul>
+  <ul class="sub-nav" *ngIf="selectedMenuOpt === 'settings'">
+    @for(sm of subMenu; track sm) {
+    <li
+      class="sub-nav-element flex items-center gap-2 p-4 my-2 ml-6 rounded-lg cursor-pointer"
+      [ngClass]="
+        selectedSubMenuOpt === sm.name ? 'bg-amber-500' : 'bg-amber-300'
+      "
+      (click)="setSubMenu(sm.name)"
+      [routerLink]="sm.link"
+    >
+      <span class="material-symbols-outlined">{{ sm.icon }}</span>
+      {{ sm.description }}
+    </li>
+    }
+  </ul>
 </div>
