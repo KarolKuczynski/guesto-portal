@@ -1,18 +1,23 @@
-<div class="bg-emerald-700 h-screen w-56 flex flex-col p-5">
-  <div
-    class="flex justify-center items-start gap-2 text-white text-xl w-full h-16"
-  >
-    <span class="material-symbols-outlined self-center">hotel</span>
-    <span class="self-center">Guesto Portal</span>
+<div class="bg-emerald-700 h-screen w-56 flex flex-col">
+  <div class="p-5">
+    <div
+      class="flex justify-center items-start gap-2 text-white text-xl w-full h-16"
+    >
+      <span class="material-symbols-outlined self-center">hotel</span>
+      <span class="self-center">Guesto Portal</span>
+    </div>
+    <div
+      class="separator bg-gradient-to-r from-emerald-500 to-emerald-700 h-0.5"
+    ></div>
   </div>
-  <div
-    class="separator bg-gradient-to-r from-emerald-500 to-emerald-700 h-0.5"
-  ></div>
-  <!--<ul>
+
+  <ul class="">
     @for(m of menu; track m){
     <li
-      class="flex items-center gap-2 p-4 m-2 rounded-lg cursor-pointer"
-      [ngClass]="selectedMenuOpt === m.name ? 'bg-blue-500' : 'bg-blue-300'"
+      class="flex flex-col items-center text-white text-xl py-4 cursor-pointer"
+      [ngClass]="
+        selectedOption === m.name ? 'bg-emerald-800' : 'bg-emerald-700'
+      "
       (click)="setMenu(m.name)"
       [routerLink]="m.link"
     >
@@ -21,19 +26,4 @@
     </li>
     }
   </ul>
-  <ul class="sub-nav" *ngIf="selectedMenuOpt === 'settings'">
-    @for(sm of subMenu; track sm) {
-    <li
-      class="sub-nav-element flex items-center gap-2 p-4 my-2 ml-6 rounded-lg cursor-pointer"
-      [ngClass]="
-        selectedSubMenuOpt === sm.name ? 'bg-amber-500' : 'bg-amber-300'
-      "
-      (click)="setSubMenu(sm.name)"
-      [routerLink]="sm.link"
-    >
-      <span class="material-symbols-outlined">{{ sm.icon }}</span>
-      {{ sm.description }}
-    </li>
-    }
-  </ul>-->
 </div>

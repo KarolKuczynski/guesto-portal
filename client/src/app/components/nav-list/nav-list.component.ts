@@ -26,31 +26,10 @@ export class NavListComponent {
       link: 'rooms',
     },
   ];
-  subMenu: Menu[] = [
-    {
-      name: 'rooms',
-      description: 'Rooms',
-      icon: 'meeting_room',
-      link: 'rooms',
-    },
-    {
-      name: 'prices',
-      description: 'Prices',
-      icon: 'price_change',
-      link: 'prices',
-    },
-  ];
 
-  selectedMenuOpt: string = 'home';
-  selectedSubMenuOpt: string = 'rooms';
+  selectedOption: string = 'home';
 
   setMenu(opt: string) {
-    this.selectedMenuOpt = opt;
-
-    if (opt === 'settings') this.selectedSubMenuOpt = 'rooms';
-  }
-
-  setSubMenu(opt: string) {
-    this.selectedSubMenuOpt = opt;
+    this.selectedOption = opt;
   }
 }
