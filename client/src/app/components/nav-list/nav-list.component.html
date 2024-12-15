@@ -11,15 +11,13 @@
     ></div>
   </div>
 
-  <ul class="">
+  <ul>
     @for(m of menu; track m){
     <li
-      class="flex flex-col items-center text-white text-xl py-4 cursor-pointer"
-      [ngClass]="
-        selectedOption === m.name ? 'bg-emerald-800' : 'bg-emerald-700'
-      "
-      (click)="setMenu(m.name)"
+      class="flex flex-col items-center text-white text-xl py-4 cursor-pointer bg-emerald-700"
       [routerLink]="m.link"
+      [routerLinkActive]="'bg-emerald-800'"
+      [routerLinkActiveOptions]="{ exact: true }"
     >
       <span class="material-symbols-outlined">{{ m.icon }}</span>
       {{ m.description }}

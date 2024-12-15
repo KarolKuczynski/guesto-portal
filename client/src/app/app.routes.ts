@@ -5,7 +5,6 @@ import { GuestComponent } from './components/guest/guest.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 
 export const routes: Routes = [
-  { path: '', component: DashboardComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'guest', component: GuestComponent },
   {
@@ -18,4 +17,5 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/prices/prices.module').then((m) => m.PricesModule),
   },
+  { path: '', component: DashboardComponent },
 ];
