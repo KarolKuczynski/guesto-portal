@@ -1,6 +1,7 @@
-<div class="flex">
-  <div class="flex flex-col">
+<div class="flex flex-row gap-10">
+  <div class="flex flex-col basis-1/2">
     <app-rooms-list [rooms]="rooms"></app-rooms-list>
     <span>Paginator</span>
   </div>
+  <app-rooms-form></app-rooms-form>
 </div>

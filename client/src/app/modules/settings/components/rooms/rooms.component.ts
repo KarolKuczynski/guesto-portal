@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Room } from './models/room.model';
 import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
+import { RoomsFormComponent } from './components/rooms-form/rooms-form.component';
 
 @Component({
   selector: 'app-rooms',
-  imports: [RoomsListComponent],
+  imports: [RoomsListComponent, RoomsFormComponent],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss',
 })
