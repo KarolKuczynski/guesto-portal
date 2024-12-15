@@ -1,0 +1,22 @@
+<div class="w-full">
+  <div class="p-4 flex gap-5">
+    @for(opt of options; track opt; let idx = $index) {
+    <span
+      class="cursor-pointer"
+      (click)="selectOption(idx)"
+      [ngClass]="
+        idx === selectedOptionIdx
+          ? 'border-b-2 border-gray-700 text-gray-700 font-medium'
+          : 'text-gray-600 font-light'
+      "
+      >{{ opt }}</span
+    >
+    }
+  </div>
+
+  <div class="p-4">
+    @switch(selectedOptionIdx){ @case (0) {
+    <app-rooms></app-rooms>
+    } @default { Test } }
+  </div>
+</div>

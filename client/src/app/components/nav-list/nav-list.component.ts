@@ -25,7 +25,7 @@ export class NavListComponent {
       name: 'settings',
       description: 'Settings',
       icon: 'settings',
-      link: 'rooms',
+      link: 'settings',
     },
   ];
 }
