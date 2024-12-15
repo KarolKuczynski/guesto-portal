@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { Menu } from './model/menu.model';
-import {
-  ActivatedRoute,
-  Router,
-  RouterLink,
-  RouterLinkActive,
-} from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
