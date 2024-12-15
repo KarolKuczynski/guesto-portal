@@ -1,14 +1,14 @@
-<table class="w-full text-sm text-left text-white">
-  <thead class="text-xs uppercase bg-blue-500">
+<table class="w-full">
+  <thead class="text-white uppercase bg-emerald-700 text-sm">
     <tr>
       @for(col of columns; track col) {
-      <th class="px-6 py-3">{{ col }}</th>
+      <th class="px-2 py-2">{{ col }}</th>
       }
     </tr>
   </thead>
   <tbody>
     @for(room of rooms; track room) {
-    <tr class="odd:bg-blue-300 even:bg-white even:text-black border-b">
+    <tr class="odd:bg-gray-200 even:bg-white even:text-black">
       <td>{{ room.id }}</td>
       <td>{{ room.name }}</td>
       <td>{{ room.roomNo }}</td>

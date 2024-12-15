@@ -1,1 +1,38 @@
-<p>rooms-form works!</p>
+<form>
+  <div>
+    <label class="block">
+      <span>Name</span>
+      <input
+        type="text"
+        class="form-input mt-1 block w-full"
+        autocomplete="off"
+      />
+    </label>
+    <label class="block">
+      <span>Room No</span>
+      <input
+        type="text"
+        class="form-input mt-1 block w-full"
+        autocomplete="off"
+      />
+    </label>
+    <label class="block">
+      <span>Adults</span>
+      <select class="form-select mt-1 block w-full" autocomplete="off">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+    <label class="block">
+      <span>Children</span>
+      <select class="form-select mt-1 block w-full" autocomplete="off">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+  </div>
+  <div class="buttons">
+    <app-button text="Cancel"></app-button>
+    <app-button text="Submit"></app-button>
+  </div>
+</form>
