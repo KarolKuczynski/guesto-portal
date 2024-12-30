@@ -1,20 +1,19 @@
 <div class="w-full">
-  <div class="p-4 flex gap-5">
+  <div class="my-6 flex gap-12 border-b-2 border-gary-300">
     @for(opt of options; track opt; let idx = $index) {
     <span
-      class="cursor-pointer"
+      class="cursor-pointer text-lg pb-4 text-gray-600 font-light"
       (click)="selectOption(idx)"
-      [ngClass]="
-        idx === selectedOptionIdx
-          ? 'border-b-2 border-gray-700 text-gray-700 font-medium'
-          : 'text-gray-600 font-light'
-      "
+      [ngClass]="{
+        'border-b-2 border-gray-700 text-gray-700 font-medium ':
+          idx === selectedOptionIdx
+      }"
       >{{ opt }}</span
     >
     }
   </div>
 
-  <div class="p-4">
+  <div>
     @switch(selectedOptionIdx){ @case (0) {
     <app-rooms></app-rooms>
     } @default { Test } }
