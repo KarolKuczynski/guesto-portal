@@ -1,4 +1,4 @@
-<table class="w-full">
+<table class="w-full border-b-2 border-emerald-700 mb-2">
   <thead class="text-white uppercase bg-emerald-700 text-base">
     <tr>
       @for(col of columns; track col) {
@@ -10,11 +10,14 @@
     @for(room of rooms; track room) {
     <tr class="odd:bg-gray-200 even:bg-white even:text-black">
       <td class="px-2 py-2">{{ room.name }}</td>
-      <td class="px-2 py-2">{{ room.roomNo }}</td>
-      <td class="px-2 py-2">{{ room.adults }}</td>
-      <td class="px-2 py-2">{{ room.children }}</td>
-      <td class="px-2 py-2">{{ room.active }}</td>
+      <td class="px-2 py-2 text-center">{{ room.roomNo }}</td>
+      <td class="px-2 py-2 text-center">{{ room.adults }}</td>
+      <td class="px-2 py-2 text-center">{{ room.children }}</td>
+      <td class="px-2 py-2 text-center">
+        <app-check [check]="room.active"></app-check>
+      </td>
     </tr>
     }
   </tbody>
 </table>
+<span>Paginator</span>
