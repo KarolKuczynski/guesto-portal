@@ -4,4 +4,5 @@ export interface Room {
   roomNo: string;
   adults: number;
   children: number;
+  active: boolean;
 }

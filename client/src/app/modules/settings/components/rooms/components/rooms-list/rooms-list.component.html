@@ -1,19 +1,19 @@
 <table class="w-full">
-  <thead class="text-white uppercase bg-emerald-700 text-sm">
+  <thead class="text-white uppercase bg-emerald-700 text-base">
     <tr>
       @for(col of columns; track col) {
-      <th class="px-2 py-2">{{ col }}</th>
+      <th class="px-2 py-2 font-normal">{{ col }}</th>
       }
     </tr>
   </thead>
   <tbody>
     @for(room of rooms; track room) {
-    <tr class="odd:bg-gray-200 even:bg-white even:text-black text-center">
-      <td>{{ room.id }}</td>
-      <td>{{ room.name }}</td>
-      <td>{{ room.roomNo }}</td>
-      <td>{{ room.adults }}</td>
-      <td>{{ room.children }}</td>
+    <tr class="odd:bg-gray-200 even:bg-white even:text-black">
+      <td class="px-2 py-2">{{ room.name }}</td>
+      <td class="px-2 py-2">{{ room.roomNo }}</td>
+      <td class="px-2 py-2">{{ room.adults }}</td>
+      <td class="px-2 py-2">{{ room.children }}</td>
+      <td class="px-2 py-2">{{ room.active }}</td>
     </tr>
     }
   </tbody>
