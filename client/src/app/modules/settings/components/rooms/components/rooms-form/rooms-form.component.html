@@ -1,43 +1,64 @@
-<form class="py-5 px-6 rounded-md bg-gray-200 border border-gray-400">
-  <div>
+<form [formGroup]="roomForm">
+  <div
+    class="text-lg pb-2 border-b-2 border-emerald-700 text-gray-700 font-medium"
+  >
+    {{ headerText }}
+  </div>
+  <div class="mt-5">
     <label class="block">
-      <span>Name</span>
+      <span class="text-gray-700"
+        >Name <span class="text-rose-700">*</span></span
+      >
       <input
         type="text"
-        class="form-input mt-1 block w-full"
+        class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
         autocomplete="off"
+        formControlName="name"
       />
     </label>
-  </div>
-  <div>
+
     <label class="block">
-      <span>Room No</span>
+      <span>Room No <span class="text-rose-700">*</span></span>
       <input
         type="text"
-        class="form-input mt-1 block w-full"
+        class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
         autocomplete="off"
+        formControlName="roomNo"
       />
     </label>
-  </div>
-  <div>
+
     <label class="block">
       <span>Adults</span>
-      <select class="form-select mt-1 block w-full" autocomplete="off">
+      <select
+        class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+        autocomplete="off"
+        formControlName="adultsMaxNo"
+      >
         <option value="1">1</option>
         <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
       </select>
     </label>
-  </div>
-  <div>
+
     <label class="block">
       <span>Children</span>
-      <select class="form-select mt-1 block w-full" autocomplete="off">
+      <select
+        class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+        autocomplete="off"
+        formControlName="childrenMaxNo"
+      >
         <option value="1">1</option>
         <option value="2">2</option>
+        <option value="3">3</option>
       </select>
     </label>
   </div>
   <div class="pt-4">
-    <app-button text="Submit"></app-button>
+    <app-button text="Submit" (click)="submitForm()"></app-button>
   </div>
 </form>
