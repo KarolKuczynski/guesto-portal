@@ -12,4 +12,6 @@ export class RoomsListComponent {
   @Input() rooms: Room[] = [];
 
   columns: string[] = ['Name', 'RoomNo', 'Adults', 'Children', 'Active'];
+
+  loadRoom(room: Room) {}
 }
