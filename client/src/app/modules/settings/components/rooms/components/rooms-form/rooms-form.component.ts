@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -7,6 +7,8 @@ import {
 } from '@angular/forms';
 import { ButtonComponent } from 'src/app/shared/components/button/button.component';
 import { Room } from '../../models/room.model';
+import { RoomService } from '../../services/room.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-rooms-form',
@@ -14,7 +16,7 @@ import { Room } from '../../models/room.model';
   templateUrl: './rooms-form.component.html',
   styleUrl: './rooms-form.component.scss',
 })
-export class RoomsFormComponent {
+export class RoomsFormComponent implements OnDestroy {
   headerText: string = '';
   roomForm = new FormGroup({
     name: new FormControl<string>('', [Validators.required]),
@@ -31,10 +33,29 @@ export class RoomsFormComponent {
     ]),
   });
 
-  @Input() room: Room | null = null;
+  selectedRoomSubscribe: Subscription | null = null;
+
+  room: Room | null = null;
+
+  constructor(private roomService: RoomService) {}
 
   ngOnInit() {
-    this.setupHeaderText();
+    this.selectedRoomSubscribe = this.roomService.selectedRoom$.subscribe(
+      (selectedRoom) => {
+        this.room = selectedRoom;
+
+        this.setupHeaderText();
+        this.setupForm();
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.selectedRoomSubscribe != null) {
+      console.log('test unsubscribe');
+      this.selectedRoomSubscribe.unsubscribe();
+      this.selectedRoomSubscribe = null;
+    }
   }
 
   setupHeaderText() {
@@ -42,7 +63,18 @@ export class RoomsFormComponent {
     else this.headerText = 'Update room';
   }
 
+  setupForm() {
+    this.roomForm.patchValue({
+      ...this.room,
+      adultsMaxNo: this.room?.adults,
+      childrenMaxNo: this.room?.children,
+    });
+  }
+
   submitForm() {
     console.log('FORM', this.roomForm);
+
+    this.roomForm.reset();
+    this.roomService.unselectRoom();
   }
 }

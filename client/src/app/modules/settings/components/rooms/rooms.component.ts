@@ -2,14 +2,18 @@ import { Component } from '@angular/core';
 import { Room } from './models/room.model';
 import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
 import { RoomsFormComponent } from './components/rooms-form/rooms-form.component';
+import { RoomService } from './services/room.service';
 
 @Component({
   selector: 'app-rooms',
   imports: [RoomsListComponent, RoomsFormComponent],
+  providers: [RoomService],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss',
 })
 export class RoomsComponent {
+  ngOnInit() {}
+
   rooms: Room[] = [
     {
       id: 1,

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Room } from '../../models/room.model';
 import { CheckComponent } from 'src/app/shared/components/check/check.component';
+import { RoomService } from '../../services/room.service';
 
 @Component({
   selector: 'app-rooms-list',
@@ -13,5 +14,9 @@ export class RoomsListComponent {
 
   columns: string[] = ['Name', 'RoomNo', 'Adults', 'Children', 'Active'];
 
-  loadRoom(room: Room) {}
+  constructor(private roomService: RoomService) {}
+
+  loadRoom(room: Room) {
+    this.roomService.selectRoom(room);
+  }
 }
