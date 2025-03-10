@@ -6,7 +6,6 @@ import {
   withPreloading,
 } from '@angular/router';
 import { routes } from './app/app.routes';
-import { provideStore } from '@ngrx/store';
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes, withPreloading(PreloadAllModules)), provideStore()],
+  providers: [provideRouter(routes, withPreloading(PreloadAllModules))],
 }).catch((e) => console.error(e));
