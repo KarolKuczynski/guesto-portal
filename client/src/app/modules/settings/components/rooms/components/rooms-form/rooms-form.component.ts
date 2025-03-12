@@ -52,7 +52,6 @@ export class RoomsFormComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     if (this.selectedRoomSubscribe != null) {
-      console.log('test unsubscribe');
       this.selectedRoomSubscribe.unsubscribe();
       this.selectedRoomSubscribe = null;
     }
@@ -72,8 +71,6 @@ export class RoomsFormComponent implements OnDestroy {
   }
 
   submitForm() {
-    console.log('FORM', this.roomForm);
-
     this.roomForm.reset();
     this.roomService.unselectRoom();
   }
