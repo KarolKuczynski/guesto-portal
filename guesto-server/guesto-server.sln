@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guesto-server", "guesto-server\guesto-server.csproj", "{0A381937-EB11-4BEA-9B16-BA03AEBA8E1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guesto.API", "guesto-server\Guesto.API.csproj", "{0A381937-EB11-4BEA-9B16-BA03AEBA8E1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guesto.Core", "guesto.core\Guesto.Core.csproj", "{67DA3FCF-67D2-4F45-937C-5AE6857DD166}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0A381937-EB11-4BEA-9B16-BA03AEBA8E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A381937-EB11-4BEA-9B16-BA03AEBA8E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A381937-EB11-4BEA-9B16-BA03AEBA8E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67DA3FCF-67D2-4F45-937C-5AE6857DD166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DA3FCF-67D2-4F45-937C-5AE6857DD166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DA3FCF-67D2-4F45-937C-5AE6857DD166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DA3FCF-67D2-4F45-937C-5AE6857DD166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
