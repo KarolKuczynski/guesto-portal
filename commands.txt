@@ -1,0 +1,3 @@
+dotnet ef migrations add initial-create -s guesto-server/ -p guesto.infrastructure/
+
+dotnet ef database update -s guesto-server/ -p guesto.infrastructure/

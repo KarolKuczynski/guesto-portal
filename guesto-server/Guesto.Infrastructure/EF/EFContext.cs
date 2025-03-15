@@ -7,6 +7,11 @@ namespace Guesto.Infrastructure.EF
     {
         public DbSet<Room> Rooms { get; set; }
 
-
+        public EFContext(DbContextOptions<EFContext> options) : base(options) { }
+       
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("DefaultConnection");
+        }*/
     }
 }
