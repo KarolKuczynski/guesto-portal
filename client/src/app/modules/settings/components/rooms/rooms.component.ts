@@ -3,11 +3,12 @@ import { Room } from './models/room.model';
 import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
 import { RoomsFormComponent } from './components/rooms-form/rooms-form.component';
 import { RoomService } from './services/room.service';
+import { RoomApiService } from '../../services/room.api.service';
 
 @Component({
   selector: 'app-rooms',
   imports: [RoomsListComponent, RoomsFormComponent],
-  providers: [RoomService],
+  providers: [RoomService, RoomApiService],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss',
 })

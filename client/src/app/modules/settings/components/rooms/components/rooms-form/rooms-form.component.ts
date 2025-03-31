@@ -9,6 +9,8 @@ import { ButtonComponent } from 'src/app/shared/components/button/button.compone
 import { Room } from '../../models/room.model';
 import { RoomService } from '../../services/room.service';
 import { Subscription } from 'rxjs';
+import { RoomApiService } from 'src/app/modules/settings/services/room.api.service';
+import { CreateRoom } from '../../models/create.room.model';
 
 @Component({
   selector: 'app-rooms-form',
@@ -37,7 +39,10 @@ export class RoomsFormComponent implements OnDestroy {
 
   room: Room | null = null;
 
-  constructor(private roomService: RoomService) {}
+  constructor(
+    private roomService: RoomService,
+    private roomApiService: RoomApiService
+  ) {}
 
   ngOnInit() {
     this.selectedRoomSubscribe = this.roomService.selectedRoom$.subscribe(
@@ -71,7 +76,11 @@ export class RoomsFormComponent implements OnDestroy {
   }
 
   submitForm() {
-    this.roomForm.reset();
-    this.roomService.unselectRoom();
+    this.roomApiService
+      .addRoom(<CreateRoom>this.roomForm.value)
+      .subscribe(() => {
+        this.roomForm.reset();
+        this.roomService.unselectRoom();
+      });
   }
 }
