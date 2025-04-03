@@ -1,4 +1,5 @@
 using Guesto.Infrastructure.EF;
+using Guesto.Infrastructure.Mapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.RegisterEFServices(builder.Configuration.GetConnectionString("DefaultConnection"));
+builder.Services.RegisterMappings();
 
 var app = builder.Build();
 

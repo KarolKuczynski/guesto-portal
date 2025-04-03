@@ -17,11 +17,11 @@ namespace guesto_server.Controllers
         }
 
         [HttpGet()]
-        public bool Get()
+        public async Task<IActionResult> Get()
         {
-            
+            var result = await _roomService.GetRoomsAsync();
 
-            return true;
+            return Ok(result);
         }
 
         [HttpPost()]
