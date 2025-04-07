@@ -36,7 +36,6 @@ export class RoomsFormComponent implements OnDestroy {
   });
 
   selectedRoomSubscribe: Subscription | null = null;
-
   room: Room | null = null;
 
   constructor(
@@ -76,11 +75,13 @@ export class RoomsFormComponent implements OnDestroy {
   }
 
   submitForm() {
-    this.roomApiService
-      .addRoom(<CreateRoom>this.roomForm.value)
-      .subscribe(() => {
-        this.roomForm.reset();
-        this.roomService.unselectRoom();
-      });
+    if (this.roomForm.valid) {
+      this.roomApiService
+        .addRoom(<CreateRoom>this.roomForm.value)
+        .subscribe(() => {
+          this.roomForm.reset();
+          this.roomService.unselectRoom();
+        });
+    }
   }
 }

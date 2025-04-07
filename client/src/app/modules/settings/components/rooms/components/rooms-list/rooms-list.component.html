@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    @for(room of rooms; track room) {
+    @for(room of this.roomService.rooms$ | async; track room) {
     <tr
       class="odd:bg-gray-200 even:bg-white even:text-black"
       [ngClass]="{

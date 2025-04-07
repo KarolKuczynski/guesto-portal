@@ -13,9 +13,18 @@ import { RoomApiService } from '../../services/room.api.service';
   styleUrl: './rooms.component.scss',
 })
 export class RoomsComponent {
-  ngOnInit() {}
+  constructor(
+    private roomService: RoomService,
+    private roomApiService: RoomApiService
+  ) {}
 
-  rooms: Room[] = [
+  ngOnInit() {
+    this.roomApiService.getRooms().subscribe((rooms) => {
+      this.roomService.loadRooms(rooms);
+    });
+  }
+
+  /*rooms: Room[] = [
     {
       id: 1,
       name: 'Room 1',
@@ -104,5 +113,5 @@ export class RoomsComponent {
       children: 2,
       active: true,
     },
-  ];
+  ];*/
 }

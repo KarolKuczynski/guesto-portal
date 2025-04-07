@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BaseApiService } from 'src/app/shared/services/base.api.service';
 import { CreateRoom } from '../components/rooms/models/create.room.model';
+import { Room } from '../components/rooms/models/room.model';
 
 @Injectable()
 export class RoomApiService extends BaseApiService {
@@ -13,5 +14,9 @@ export class RoomApiService extends BaseApiService {
 
   addRoom(newRoom: CreateRoom) {
     return this.post(this.baseUrl, newRoom);
+  }
+
+  getRooms() {
+    return this.get<Room[]>(this.baseUrl);
   }
 }

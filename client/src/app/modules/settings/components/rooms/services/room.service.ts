@@ -5,6 +5,7 @@ import { Room } from '../models/room.model';
 @Injectable()
 export class RoomService {
   selectedRoom$ = new BehaviorSubject<Room | null>(null);
+  rooms$ = new BehaviorSubject<Room[]>([]);
 
   constructor() {}
 
@@ -14,5 +15,9 @@ export class RoomService {
 
   unselectRoom() {
     this.selectedRoom$.next(null);
+  }
+
+  loadRooms(rooms: Room[]) {
+    this.rooms$.next(rooms);
   }
 }

@@ -12,14 +12,14 @@ import { Subscription } from 'rxjs';
   styleUrl: './rooms-list.component.scss',
 })
 export class RoomsListComponent {
-  @Input() rooms: Room[] = [];
+  //@Input() rooms: Room[] = [];
   selectedRoomId: number | null = null;
 
   columns: string[] = ['Name', 'RoomNo', 'Adults', 'Children', 'Active'];
 
   selectedRoomSubscribe: Subscription | null = null;
 
-  constructor(private roomService: RoomService) {}
+  constructor(protected roomService: RoomService) {}
 
   ngOnInit() {
     this.selectedRoomSubscribe = this.roomService.selectedRoom$.subscribe(
