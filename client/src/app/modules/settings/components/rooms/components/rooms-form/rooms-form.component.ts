@@ -23,12 +23,12 @@ export class RoomsFormComponent implements OnDestroy {
   roomForm = new FormGroup({
     name: new FormControl<string>('', [Validators.required]),
     roomNo: new FormControl<string>('', [Validators.required]),
-    adultsMaxNo: new FormControl<number>(1, [
+    adults: new FormControl<number>(1, [
       Validators.required,
       Validators.min(1),
       Validators.max(8),
     ]),
-    childrenMaxNo: new FormControl<number>(1, [
+    children: new FormControl<number>(1, [
       Validators.required,
       Validators.min(1),
       Validators.max(3),
@@ -37,6 +37,7 @@ export class RoomsFormComponent implements OnDestroy {
 
   selectedRoomSubscribe: Subscription | null = null;
   room: Room | null = null;
+  buttonDisabled: boolean = false;
 
   constructor(
     private roomService: RoomService,
@@ -69,18 +70,18 @@ export class RoomsFormComponent implements OnDestroy {
   setupForm() {
     this.roomForm.patchValue({
       ...this.room,
-      adultsMaxNo: this.room?.adults,
-      childrenMaxNo: this.room?.children,
     });
   }
 
   submitForm() {
     if (this.roomForm.valid) {
+      this.buttonDisabled = true;
       this.roomApiService
         .addRoom(<CreateRoom>this.roomForm.value)
         .subscribe(() => {
           this.roomForm.reset();
           this.roomService.unselectRoom();
+          this.buttonDisabled = false;
         });
     }
   }
