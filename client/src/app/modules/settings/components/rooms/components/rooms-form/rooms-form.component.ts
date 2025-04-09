@@ -73,6 +73,14 @@ export class RoomsFormComponent implements OnDestroy {
     });
   }
 
+  isInvalid(name: string): boolean {
+    let control = this.roomForm.get(name);
+
+    if (!control) return false;
+
+    return control.invalid && (control.touched || control.dirty);
+  }
+
   submitForm() {
     if (this.roomForm.valid) {
       this.buttonDisabled = true;
