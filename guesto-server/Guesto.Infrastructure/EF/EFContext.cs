@@ -8,7 +8,13 @@ namespace Guesto.Infrastructure.EF
         public DbSet<Room> Rooms { get; set; }
 
         public EFContext(DbContextOptions<EFContext> options) : base(options) { }
-       
-        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Room>(entity =>
+            {
+                entity.HasIndex(e => e.RoomNo).IsUnique();
+            });
+        }
     }
 }

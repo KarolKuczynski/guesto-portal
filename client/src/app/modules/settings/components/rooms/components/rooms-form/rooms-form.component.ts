@@ -30,7 +30,7 @@ export class RoomsFormComponent implements OnDestroy {
     ]),
     children: new FormControl<number>(1, [
       Validators.required,
-      Validators.min(1),
+      Validators.min(0),
       Validators.max(3),
     ]),
   });

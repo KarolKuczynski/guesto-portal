@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Guesto.Infrastructure.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20250315170953_initial-create")]
+    [Migration("20250412162428_initial-create")]
     partial class initialcreate
     {
         /// <inheritdoc />
@@ -52,6 +52,9 @@ namespace Guesto.Infrastructure.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoomNo")
+                        .IsUnique();
 
                     b.ToTable("Rooms");
                 });

@@ -50,6 +50,9 @@ namespace Guesto.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RoomNo")
+                        .IsUnique();
+
                     b.ToTable("Rooms");
                 });
 #pragma warning restore 612, 618

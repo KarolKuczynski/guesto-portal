@@ -26,6 +26,12 @@ namespace Guesto.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Rooms", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rooms_RoomNo",
+                table: "Rooms",
+                column: "RoomNo",
+                unique: true);
         }
 
         /// <inheritdoc />
