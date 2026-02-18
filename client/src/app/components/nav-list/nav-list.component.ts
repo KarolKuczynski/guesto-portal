@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Menu } from './model/menu.model';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-nav-list',
   templateUrl: './nav-list.component.html',
   styleUrls: ['./nav-list.component.scss'],
-  imports: [RouterLink, CommonModule, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
 })
 export class NavListComponent {
   constructor() {}
